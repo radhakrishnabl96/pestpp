@@ -88,6 +88,8 @@ public:
 	void reorder(const vector<string> &_real_names, const vector<string> &_var_names, bool update_org_real_names=false);
 	void drop_rows(const vector<int> &row_idxs, bool update_org_real_names=false);
 	void drop_rows(const vector<string> &drop_names, bool update_org_real_names=false);
+	void keep_cols(const vector<string>& keep);
+	void change_var_names(const map<string, string>);
 	void drop_cols(const vector<string>& drop_names);
 	void keep_rows(const vector<int> &row_idxs);
 	void keep_rows(const vector<string> &keep_names);

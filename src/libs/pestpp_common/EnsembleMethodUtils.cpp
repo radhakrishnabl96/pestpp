@@ -835,71 +835,32 @@ void CovLocalizationUpgradeThread::work(int thread_id, int iter, double cur_lam,
 
 	if (!use_glm_form)
 	{
-        if (true)
-        {
-            // Low rank Cee. Section 14.3.2 Evenson Book
-            obs_err = obs_err.colwise() - obs_err.rowwise().mean();
-            obs_err = sqrt(cur_lam) * obs_err;
-            Eigen::MatrixXd s0, V0, U0, s0_i;
-            SVD_REDSVD rsvd;
-            rsvd.solve_ip(obs_diff, s0, U0, V0, eigthresh, maxsing);
-            s0_i = s0.asDiagonal().inverse();
-            Eigen::MatrixXd X0 = U0.transpose() * obs_err;
-            X0 = s0_i * X0;
-            Eigen::MatrixXd s1, V1, U1, s1_2, s1_2i;
-            rsvd.solve_ip(X0, s1, U1, V1, 0, maxsing);
+		obs_diff = scale * obs_diff;// (H-Hm)/sqrt(N-1)		
+		par_diff = scale * par_diff;// (K-Km)/sqrt(N-1)		
+		obs_err = scale * obs_err; //  (E-Em)/sqrt(N-1)	
 
-            s1_2 = s1.cwiseProduct(s1);
-            s1_2i = (Eigen::VectorXd::Ones(s1_2.size()) + s1_2).asDiagonal().inverse();
-            Eigen::MatrixXd X1 = s0_i * U1;
-            X1 = U0 * X1;
+		SVD_REDSVD rsvd;
+		Eigen::MatrixXd C = obs_diff + (cur_lam * obs_err); // curr_lam is the inflation factor 		
+		local_utils::save_mat(verbose_level, thread_id, iter, t_count, "C", C);
+		rsvd.solve_ip(C, s, Ut, V, eigthresh, maxsing);
+		Ut.transposeInPlace();
+		V.resize(0, 0);
+		C.resize(0, 0);
+		obs_err.resize(0, 0);
 
-            Eigen::MatrixXd X4 = s1_2i * X1.transpose();
-            Eigen::MatrixXd X2 = X4 * obs_resid;
-            Eigen::MatrixXd X3 = X1 * X2;
+		// s2 = s.asDiagonal().inverse();
+		s2 = s.cwiseProduct(s).asDiagonal().inverse();
+		for (int i = 0; i < s.size(); i++)
+		{
+			if (s(i) < 1e-50)
+			{
+				s2(i, i) = 0;
+			}
+		}
 
-            X3 = obs_diff.transpose() * X3;
-            //upgrade_1 = -1 * par_diff * X3;
-            //local_utils::save_mat(verbose_level, thread_id, iter, t_count, "upgrade_1", upgrade_1);
-            //upgrade_1.transposeInPlace();
-            t = obs_diff.transpose() * X3;
-            Ut.resize(0, 0);
-            obs_diff.resize(0, 0);
-            X3.resize(0,0);
-            X2.resize(0,0);
-            X4.resize(0,0);
-            X1.resize(0,0);
-
-
-
-
-        }
-        else {
-            obs_diff = scale * obs_diff;// (H-Hm)/sqrt(N-1)
-            par_diff = scale * par_diff;// (K-Km)/sqrt(N-1)
-            obs_err = scale * obs_err; //  (E-Em)/sqrt(N-1)
-
-            SVD_REDSVD rsvd;
-            Eigen::MatrixXd C = obs_diff + (cur_lam * obs_err); // curr_lam is the inflation factor
-            local_utils::save_mat(verbose_level, thread_id, iter, t_count, "C", C);
-            rsvd.solve_ip(C, s, Ut, V, eigthresh, maxsing);
-            Ut.transposeInPlace();
-            V.resize(0, 0);
-            C.resize(0, 0);
-            obs_err.resize(0, 0);
-
-            // s2 = s.asDiagonal().inverse();
-            s2 = s.cwiseProduct(s).asDiagonal().inverse();
-            for (int i = 0; i < s.size(); i++) {
-                if (s(i) < 1e-50) {
-                    s2(i, i) = 0;
-                }
-            }
-
-            t = obs_diff.transpose() * Ut.transpose() * s2 * Ut;
-            Ut.resize(0, 0);
-            obs_diff.resize(0, 0);
-        }
+		t = obs_diff.transpose() * Ut.transpose() * s2 * Ut;
+		Ut.resize(0, 0);
+		obs_diff.resize(0,0);
 	}
 
 
@@ -1537,7 +1498,12 @@ void LocalAnalysisUpgradeThread::work(int thread_id, int iter, double cur_lam, b
 				upgrade_1 = -1 * par_diff * X1;
 				local_utils::save_mat(verbose_level, thread_id, iter, t_count, "upgrade_1", upgrade_1);
 				upgrade_1.transposeInPlace();
-			}		
+			}	
+
+			if (false)
+			{
+				// sr
+			}
 			
 			
 		}
@@ -4305,6 +4271,82 @@ void EnsembleMethod::initialize(int cycle, bool run, bool use_existing)
     message(0, "initialization complete");
 }
 
+void EnsembleMethod::transfer_dynamic_state_from_oe_to_oe(ObservationEnsemble& _oe1, ObservationEnsemble& _oe2)
+{
+	// transfer dynamic state from oe to another oe
+	/*if (obs_dyn_state_names.size() > 0)
+	{
+		map<string, int> par2col_map;
+		for (int i = 0; i < par_dyn_state_names.size(); i++)
+			par2col_map[par_dyn_state_names[i]] = i;
+
+		Eigen::MatrixXd mat = _oe1.get_eigen(vector<string>(), obs_dyn_state_names);
+		for (int i = 0; i < mat.rows(); i++)
+		{
+			mat.row(i) = pars.get_data_eigen_vec(par_dyn_state_names);
+		}
+
+	}*/
+
+}
+ParameterEnsemble EnsembleMethod::get_initial_dynamic_state_pe(ParameterEnsemble& _pe1)
+{
+	map<string, string> dyn_init_dyn_map;
+	ParameterEnsemble dyn_state_pe = _pe1;
+	if (par_dyn_state_names.size() > 0)
+	{
+		dyn_state_pe.keep_cols(par_dyn_state_names);
+		// if update initial dynamic state	
+		vector <string> ini_par_dyn_state_names;
+		string new_name;
+		for (auto& p : par_dyn_state_names)
+		{
+			new_name = "init_" + p;
+			ini_par_dyn_state_names.push_back(new_name);
+			dyn_init_dyn_map.insert(pair<string, string> (new_name, p));
+		}
+		
+			
+	}
+
+}
+void  EnsembleMethod::transfer_dynamic_state_from_pe_to_pe(ParameterEnsemble& _pe1, ParameterEnsemble& _pe2)
+{
+	// transfere dynamic state from _pe1 to _pe2
+	if (par_dyn_state_names.size() > 0)
+	{
+		map<string, int> par2col_map;
+		for (int i = 0; i < par_dyn_state_names.size(); i++)
+			par2col_map[par_dyn_state_names[i]] = i;
+
+		ParameterEnsemble::transStatus org_status = _pe1.get_trans_status();
+		ParamTransformSeq bts = pest_scenario.get_base_par_tran_seq();
+		Eigen::MatrixXd mat = _pe1.get_eigen(vector<string>(), par_dyn_state_names);
+		if (org_status == ParameterEnsemble::transStatus::NUM)
+		{
+
+			//get a vec of adj states
+			vector<string> adj_par_dyn_state_names = pest_scenario.get_ctl_ordered_adj_par_names();
+			set<string> sadj_pars(adj_par_dyn_state_names.begin(), adj_par_dyn_state_names.end());
+			adj_par_dyn_state_names.clear();
+			set<string>::iterator end = sadj_pars.end();
+			for (auto& p : par_dyn_state_names)
+				if (sadj_pars.find(p) != end)
+					adj_par_dyn_state_names.push_back(p);
+			for (int i = 0; i < mat.rows(); i++)
+			{
+				Parameters pars = pest_scenario.get_ctl_parameters();
+				pars.update(par_dyn_state_names, mat.row(i));
+				bts.ctl2numeric_ip(pars);
+				for (auto& p : adj_par_dyn_state_names)
+					mat(i, par2col_map[p]) = pars.get_rec(p);
+			}
+		}
+		_pe2.replace_col_vals_and_fixed(par_dyn_state_names, mat);
+
+	}
+
+}
 void EnsembleMethod::transfer_dynamic_state_from_oe_to_pe(ParameterEnsemble& _pe, ObservationEnsemble& _oe)
 {
 	//vector<string> real_names = oe.get_real_names();
@@ -4617,6 +4659,8 @@ bool EnsembleMethod::solve(bool use_mda, vector<double> inflation_factors, vecto
 	pe.transform_ip(ParameterEnsemble::transStatus::NUM);
 
 	vector<ParameterEnsemble> pe_lams;
+	vector<ObservationEnsemble> oe_update_lams;
+
 	vector<double> lam_vals, scale_vals;
 	//update all the fast-lookup structures
 	performance_log->log_event("reordering variables in pe");
@@ -4625,6 +4669,26 @@ bool EnsembleMethod::solve(bool use_mda, vector<double> inflation_factors, vecto
 	pe.update_var_map();
 	parcov.update_sets();
 	obscov.update_sets();
+
+	// save initial pe dyn state before using simulated dyn state
+	ParameterEnsemble pe_ini = pe;
+	transfer_dynamic_state_from_oe_to_pe(pe, oe);
+	string new_var_nam;
+	if (false) 
+	{	
+	  // update initial dynamic state
+	  // since dynamic states h(t) and h(t+1) have the same par name, we need to change init dyn state name
+		map <string, string> map_dyn_init;
+		for (auto p : par_dyn_state_names)
+		{
+			new_var_nam = "i_" + p;
+			map_dyn_init.insert(pair<string, string>(p, new_var_nam));
+		}
+		ParameterEnsemble  init_dyn_pe = pe_ini;
+		init_dyn_pe.keep_cols(par_dyn_state_names);
+		init_dyn_pe.change_var_names(map_dyn_init);
+		pe.add_2_cols_ip(init_dyn_pe); // pe = [pe; hi; other pars] ///BADDDD""
+	}
 
 	//buid up this container here and then reuse it for each lambda later...
 	unordered_map<string, pair<vector<string>, vector<string>>> loc_map;
@@ -4717,6 +4781,12 @@ bool EnsembleMethod::solve(bool use_mda, vector<double> inflation_factors, vecto
 				message(1, "even though 'ies_upgrades_in_memory' is 'false', there is no benefit to using this option because either you arent testing multiple upgrades or you arent using a subset");
 			}
 
+			// extract updated dynamic state from pe_lam_scale and put it in a new container. 
+			ObservationEnsemble oe_with_update_state = oe;
+			transfer_dynamic_state_from_pe_to_oe(pe_lam_scale, oe_with_update_state);
+			transfer_dynamic_state_from_pe_to_pe(pe_ini, pe_lam_scale);
+			oe_update_lams.push_back(oe_with_update_state);
+			
 			pe_lams.push_back(pe_lam_scale);
 			lam_vals.push_back(cur_lam);
 			scale_vals.push_back(sf);
@@ -4756,12 +4826,20 @@ bool EnsembleMethod::solve(bool use_mda, vector<double> inflation_factors, vecto
 
 	//the case for all state estimation and non-iterative
 	//only one upgrade lambda and all pars are states
-	if (((pe_lams.size() == 1) && (par_dyn_state_names.size() == pe_lams[0].shape().second) && pest_scenario.get_control_info().noptmax == 1))
+	// 
+	bool skip_model_evaluation = true;
+	if (
+		((pe_lams.size() == 1) && (par_dyn_state_names.size() == pe_lams[0].shape().second) && pest_scenario.get_control_info().noptmax == 1)||
+		( (skip_model_evaluation)&& (pe_lams.size() == 1) )
+		)
+		
 	{
 		message(1, "non-iterative state-estimation detected, not evaluating state estimates for current cycle");
 		pe = pe_lams[0];
+		oe = oe_update_lams[0];
 		//move the estimated states to the oe, which will then later be transferred back to the pe
-		transfer_dynamic_state_from_pe_to_oe(pe, oe);
+		transfer_dynamic_state_from_oe_to_pe(pe, oe);
+		//transfer_dynamic_state_from_pe_to_oe(pe, oe);
 		ph.update(oe, pe);
 		double best_mean = ph.get_mean(L2PhiHandler::phiType::COMPOSITE);
 		double best_std = ph.get_std(L2PhiHandler::phiType::COMPOSITE);
@@ -4776,7 +4854,7 @@ bool EnsembleMethod::solve(bool use_mda, vector<double> inflation_factors, vecto
 	double mean, std;
 
 	message(0, "running upgrade ensembles");
-	vector<ObservationEnsemble> oe_lams;
+	vector<ObservationEnsemble> oe_lams;	
 	
 	//if we are saving upgrades to disk
 	if (pe_filenames.size() > 0)
@@ -4882,7 +4960,8 @@ bool EnsembleMethod::solve(bool use_mda, vector<double> inflation_factors, vecto
 		}
 
 		if ((best_mean > acc_phi))
-		{
+		{			
+			
 			//ph.update(oe_lams[best_idx],pe_lams[best_idx]);
 
 			
@@ -4921,7 +5000,7 @@ bool EnsembleMethod::solve(bool use_mda, vector<double> inflation_factors, vecto
 					last_best_std = best_std;
 				}
 			}
-			else
+			else // the new best mean is not smaller after updating realizations
 			{
 				double new_lam = last_best_lam * lam_inc;
 				new_lam = (new_lam > lambda_max) ? lambda_max : new_lam;
@@ -4933,17 +5012,17 @@ bool EnsembleMethod::solve(bool use_mda, vector<double> inflation_factors, vecto
 			return false;
 		}
 
+		// AHA: if we are here , then phi is decreased and lambda might have stayed the same or decreased
 		//release the memory of the unneeded pe_lams
 		for (int i = 0; i < pe_lams.size(); i++)
 		{
 			if (i == best_idx)
 				continue;
 			pe_lams[i] =pe.zeros_like(0);
+			//oe_update_lams[i] = oe.zeros_like(0);
 		}
 		//need to work out which par and obs en real names to run - some may have failed during subset testing...
-		ObservationEnsemble remaining_oe_lam = oe;//copy
-
-		
+		ObservationEnsemble remaining_oe_lam = oe;//copy		
 		ParameterEnsemble remaining_pe_lam = pe_lams[best_idx];
 
 		if (pe_filenames.size() > 0)
@@ -5077,14 +5156,13 @@ bool EnsembleMethod::solve(bool use_mda, vector<double> inflation_factors, vecto
 		message(1, "phi summary for entire ensemble using lambda,scale_fac ", vector<double>({ lam_vals[best_idx],scale_vals[best_idx] }));
 		ph.report(true);
 	}
-	else
+	else // not subset
 	{
 		ph.update(oe_lam_best, pe_lams[best_idx]);
 		best_mean = ph.get_mean(L2PhiHandler::phiType::COMPOSITE);
 		best_std = ph.get_std(L2PhiHandler::phiType::COMPOSITE);
-
 	}
-
+	// AHA:
 	ph.update(oe_lam_best, pe_lams[best_idx]);
 	best_mean = ph.get_mean(L2PhiHandler::phiType::COMPOSITE);
 	best_std = ph.get_std(L2PhiHandler::phiType::COMPOSITE);
@@ -5123,7 +5201,7 @@ bool EnsembleMethod::solve(bool use_mda, vector<double> inflation_factors, vecto
 		last_best_std = best_std;
 	}
 
-	else
+	else // phi is not good (small) enough
 	{
 		//message(0, "not updating parameter ensemble");
 		message(0, "only updating realizations with reduced phi");
@@ -5164,6 +5242,15 @@ bool EnsembleMethod::solve(bool use_mda, vector<double> inflation_factors, vecto
 		}
 	}
 	//report_and_save();
+	bool use_updated_dyn_state = true;
+	if (use_updated_dyn_state)
+	{
+		ObservationEnsemble oe_dyn = oe_update_lams[best_idx];
+		vector<string> pe_names = pe.get_real_names();
+		oe_dyn.drop_rows(pe_names);
+		oe = oe_dyn;
+	}
+	oe_update_lams.clear();
 	return true;
 }
 

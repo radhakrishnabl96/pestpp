@@ -711,6 +711,32 @@ void Ensemble::drop_rows(const vector<string> &drop_names, bool update_org_real_
 
 }
 
+void Ensemble ::keep_cols(const vector<string>& keep_names)
+{
+
+	if (keep_names.size() == 0)
+		reals = Eigen::MatrixXd();
+	else
+		reals = get_eigen(vector<string>(), keep_names);
+	var_names = keep_names;
+}
+
+void Ensemble::change_var_names(const map<string, string> map_init)
+{
+	// map<old_name, new_name>
+	vector <string> new_var_names;
+
+	for (auto it = map_init.begin(); it != map_init.end(); it++)
+	{
+		string ostr, nstr;
+		ostr = it->first;
+
+		std::replace(var_names.begin(), var_names.end(), it->first, it->second);
+	}
+
+	
+}
+
 void Ensemble::drop_cols(const vector<string>& drop_names)
 {
 	vector<string> keep_names;

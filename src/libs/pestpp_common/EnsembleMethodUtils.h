@@ -313,6 +313,13 @@ public:
 	
 	void initialize(int cycle = NetPackage::NULL_DA_CYCLE, bool run = true, bool use_existing=false);
 
+	void transfer_dynamic_state_from_oe_to_oe(ObservationEnsemble& _oe1, ObservationEnsemble& _oe2);
+
+	ParameterEnsemble get_initial_dynamic_state_pe(ParameterEnsemble& _pe1);
+
+
+	void transfer_dynamic_state_from_pe_to_pe(ParameterEnsemble& _pe1, ParameterEnsemble& _pe2);
+
 	//this is not called in the initialization - must be called before initialize() to trigger dynamic state handling...
 	void initialize_dynamic_states();
 
