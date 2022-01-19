@@ -1,0 +1,16 @@
+pcf version=2
+* control data keyword
+pestmode                                 estimation
+noptmax                                 -1
+* parameter groups external
+Case5_II_A_glm_pargrp_data.csv
+* parameter data external
+Case5_II_A_glm_par_data.csv
+* observation data external
+Case5_II_A_glm_obs_data.csv
+* model command line
+python3 ats_modelcmd.py
+* model input external
+Case5_II_A_glm.tplfile.csv
+* model output external
+Case5_II_A_glm.insfile.csv

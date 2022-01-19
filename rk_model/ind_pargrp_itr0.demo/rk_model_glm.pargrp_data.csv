@@ -1,0 +1,5 @@
+pargpnme,inctyp,derinc,derinclb,forcen,derincmul,dermthd
+n_m_gp,relative,0.1,0.0,switch,1.0,parabolic
+tcs_m_gp,relative,0.1,0.0,switch,1.0,parabolic
+af_m_gp,relative,0.1,0.0,switch,1.0,parabolic
+af_p_gp,relative,0.1,0.0,switch,1.0,parabolic

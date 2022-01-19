@@ -1,0 +1,27 @@
+                    PARAMETER SENSITIVITIES: CASE rk_model_glm_cf_v1_rw
+
+
+NUMERIC PARAMETER SENSITIVITIES FOR OPTIMISATION ITERATION NO. 1   ----->
+  Parameter name   Group        Current Value        PEST_CSS_wo_reg
+   n_m             n_m_gp       1.20000000000        4.27743057419e-06   
+   tcs_m           tcs_m_gp     1.00000000000        1.77986431537e-06   
+   af_m            af_m_gp      0.0500000000000      3.69624223610e-06   
+   af_p            af_p_gp      0.00500000000000     4.88215332878e-05   
+
+
+NUMERIC PARAMETER SENSITIVITIES FOR OPTIMISATION ITERATION NO. 2   ----->
+  Parameter name   Group        Current Value        PEST_CSS_wo_reg
+   n_m             n_m_gp       1.19999275612        4.26910601108e-06   
+   tcs_m           tcs_m_gp     1.00000000000        1.77661295599e-06   
+   af_m            af_m_gp      0.0499887473610      4.24079133757e-06   
+   af_p            af_p_gp      0.00501965293800     5.89165181721e-05   
+
+
+NUMERIC PARAMETER SENSITIVITIES FOR OPTIMISATION ITERATION NO. 3   ----->
+  Parameter name   Group        Current Value        PEST_CSS_wo_reg
+   n_m             n_m_gp       1.19999203152        4.27601180763e-06   
+   tcs_m           tcs_m_gp     1.00000000000        1.77968528758e-06   
+   af_m            af_m_gp      0.0499873819380      4.86640520602e-06   
+   af_p            af_p_gp      0.00501540674000     5.38070825887e-05   
+
+

@@ -1,0 +1,16 @@
+pcf version=2
+* control data keyword
+pestmode                                 estimation
+noptmax                                 1
+* parameter groups external
+rk_model_glm.pargrp_data.csv
+* parameter data external
+rk_model_glm.par_data.csv
+* observation data external
+rk_model_glm.obs_data.csv
+* model command line
+python3 ats_modelcmd.py
+* model input external
+rk_model_glm.tplfile.csv
+* model output external
+rk_model_glm.insfile.csv
