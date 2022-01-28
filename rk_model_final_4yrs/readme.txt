@@ -1,0 +1,1 @@
+The following file is to calibrate and validate the model with 4 years of data mainly in the Cluster. Previously in the folder rk_model_final - the calibration was carried out for only 1 year. All the files will have a similar naming with the ending cv.

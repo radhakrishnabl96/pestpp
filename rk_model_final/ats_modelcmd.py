@@ -1,5 +1,3 @@
-# The python file is written to run the ats model and change output data format and the moisture data units such that it is suitable for PEST.
-
 import os
 import subprocess
 import shutil
@@ -8,45 +6,51 @@ import time
 import re
 import pandas as pd
 
+# The file name, porosity of peat and mineral line has to be identified the porosity - Therefore change when the .xml file changes
+file_name = 'Case5_I_E_glm' # Change
+line_por_peat = 602 # Change
+line_por_mineral = 611 # Change
 
 # Removing the previously generated output file
-os.system("rm -rf rk_model_glm_obs_data.dat")
+os.system(f"rm -rf {file_name}_obs_data.dat")
+
 
 # Running ats command
-os.system("ats --xml_file=rk_model_glm_input.xml")
+os.system(f"ats --xml_file={file_name}.xml")
+
 
 # Generating a suitable observation file with no hash!
 remove_hashs = ['#']
 
-old_file_name = 'observations.dat'
-new_file_name = 'rk_model_glm_obs_data_mois.dat'
+old_file_name = 'observation.dat'
+new_file_name = f'{file_name}_obs_data_mois.dat'
 with open(f'{old_file_name}') as oldfile, open(f'{new_file_name}', 'w') as newfile:
             for line in oldfile:
                 if not any(remove_hash in line for remove_hash in remove_hashs):
                     newfile.write(line)
+                    
 
-
+                    
 # 1. To find the porosity
-filename = 'rk_model_glm_input.xml'
+filename = f'{file_name}.xml'
 
 with open(f'{filename}') as oldfile:
             for line, content in enumerate(oldfile):
-                if line == 505: # Line 505 (+1) has the porosity_peat 
+                if line == line_por_peat: # Line 603 (+1) has the porosity_peat 
                     poro_peat_line = str(content)
                     result = re.findall('\".*?\"', poro_peat_line)
                     poro_peat = float(result[2].replace('"',''))
                     #print(poro_peat)
-                elif line == 514: # Line 514 (+1) has the porosity_mineral
+                elif line == line_por_mineral: # Line 612 (+1) has the porosity_mineral
                     poro_mineral_line = str(content)
                     result_2 = re.findall('\".*?\"', poro_mineral_line)
                     poro_mineral = float(result_2[2].replace('"',''))
                     #print(poro_mineral)
 
-
                     
-# 2. To find the VWC
+# 2. To find the saturation of liquid
 
-obs_data = 'rk_model_glm_obs_data_mois.dat'
+obs_data = f'{file_name}_obs_data_mois.dat'
 
 file_data = pd.read_csv(obs_data,sep=' ', index_col='time [s]')
 
@@ -62,13 +66,16 @@ for i, depth in enumerate(depths):
     else:
         file_data[f'point -{depth} saturation liquid'] = file_data[f'point -{depth} saturation liquid']*(poro_mineral*100)
 
-file_data.to_csv('rk_model_glm_obs_data_2.dat',sep=' ',index=True)
+file_data.to_csv(f'{file_name}_obs_data_2.dat',sep=' ',index=True)
+
 
 # Removing the top row since it is not suitable with instruction file
 remove_hashs = ['"']
 
-old_file_name = 'rk_model_glm_obs_data_2.dat'
-new_file_name = 'rk_model_glm_obs_data.dat'
+old_file_name = f'{file_name}_obs_data_2.dat'
+
+new_file_name = f'{file_name}_obs_data.dat'
+
 with open(f'{old_file_name}') as oldfile, open(f'{new_file_name}', 'w') as newfile:
             for line in oldfile:
                 if not any(remove_hash in line for remove_hash in remove_hashs):
@@ -76,4 +83,4 @@ with open(f'{old_file_name}') as oldfile, open(f'{new_file_name}', 'w') as newfi
 
 
 # Remove all the unnescessary output files expect the .dat file
-os.system("rm -rf *.xmf *.h5 observations.dat rk_model_glm_obs_data_mois.dat rk_model_glm_obs_data_2.dat")
+os.system(f"rm -rf *.xmf *.h5 observation.dat {file_name}_obs_data_mois.dat {file_name}_obs_data_2.dat")
