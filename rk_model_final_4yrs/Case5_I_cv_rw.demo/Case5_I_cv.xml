@@ -691,7 +691,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="9.9000000000e+02" />
+                <Parameter name="value" type="double" value="9.0000000000e+02" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -1049,7 +1049,7 @@
           <Parameter name="roughness length of snow [m]" type="double" value="5.00000000e-03" />
           <!-- Is the water transition depth [m] similar to the penetration depth of sw radiation in water from the article? -->  
           <Parameter name="snow transition depth [m]" type="double" value="0.02000000000000" />
-          <Parameter name="water transition depth [m]" type="double" value="0.01000000000000" />
+          <Parameter name="water transition depth [m]" type="double" value="0.01100000000000" />
           <Parameter name="albedo of bare ground [-]" type="double" value="0.550000000000000044" />
           <Parameter name="emissivity of bare ground [-]" type="double" value="0.5500000000000" />
         </ParameterList>
