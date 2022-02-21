@@ -458,10 +458,10 @@
           <ParameterList name="mineral" type="ParameterList">
             <Parameter name="region" type="string" value="subsurface domain mineral" />
             <Parameter name="thermal conductivity type" type="string" value="three-phase wet/dry" />
-            <Parameter name="thermal conductivity, saturated (unfrozen) [W m^-1 K^-1]" type="double" value="1.04731557043300" />
+            <Parameter name="thermal conductivity, saturated (unfrozen) [W m^-1 K^-1]" type="double" value="0.95210506403000" />
             <Parameter name="thermal conductivity, dry [W m^-1 K^-1]" type="double" value="0.98440542895000" />
             <Parameter name="unsaturated alpha frozen [-]" type="double" value="1.4993891283000" />
-            <Parameter name="unsaturated alpha unfrozen [-]" type="double" value="0.69888402864000" />
+            <Parameter name="unsaturated alpha unfrozen [-]" type="double" value="0.76877243150400" />
           </ParameterList>
           <ParameterList name="bedrock" type="ParameterList">
             <Parameter name="region" type="string" value="subsurface domain bedrock" />

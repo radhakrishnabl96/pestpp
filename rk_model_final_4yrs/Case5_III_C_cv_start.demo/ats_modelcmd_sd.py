@@ -10,8 +10,8 @@ import h5py
 
 # The file name, porosity of peat and mineral line has to be identified the porosity - Therefore change when the .xml file changes
 file_name = 'Case5_III_C_cv' # Change
-line_por_peat = 514 # Change (-1 of the line where porosity of peat is found)
-line_por_mineral = 523 # Change (-1 of the line where porosity of mineral is found)
+line_por_peat = 602 # Change (-1 of the line where porosity of peat is found)
+line_por_mineral = 611 # Change (-1 of the line where porosity of mineral is found)
 line_sd = 1011 # Change (-1 of the line where snow density is found)
 
 # 1. To find the snow density from the xml file

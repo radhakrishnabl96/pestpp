@@ -25,7 +25,6 @@ pen_w_gp,relative,0.1,0.0,switch,1.0,parabolic
 pen_s_gp,relative,0.1,0.0,switch,1.0,parabolic
 z_bg_gp,relative,0.1,0.0,switch,1.0,parabolic
 z_s_gp,relative,0.1,0.0,switch,1.0,parabolic
-ini_T_gp,relative,0.1,0.0,switch,1.0,parabolic
-ini_SD_gp,relative,0.1,0.0,switch,1.0,parabolic
-ini_WT_gp,relative,0.1,0.0,switch,1.0,parabolic
+ini_sd_gp,relative,0.1,0.0,switch,1.0,parabolic
+ini_wt_gp,relative,0.1,0.0,switch,1.0,parabolic
 sden_gp,relative,0.1,0.0,switch,1.0,parabolic

@@ -25,7 +25,6 @@ pen_w,none,factor,0.01,0.0025,0.0175,pen_w_gp,1.0,0.0,1
 pen_s,none,factor,0.02,0.005,0.035,pen_s_gp,1.0,0.0,1
 z_bg,none,factor,0.04,0.01,0.07,z_bg_gp,1.0,0.0,1
 z_s,none,factor,0.005,0.00125,0.00875,albedo_bg_gp,1.0,0.0,1
-ini_T,none,factor,265.0,260.0,271.0,ini_T_gp,1.0,0.0,1
-ini_SD,none,factor,0.15,0.001,0.3,ini_SD_gp,1.0,0.0,1
-ini_WT,none,factor,1.0,0.1,2.0,ini_WT_gp,1.0,0.0,1
+ini_sd,none,factor,0.15,0.001,0.3,ini_sd_gp,1.0,0.0,1
+ini_wt,none,factor,1.0,0.1,2.0,ini_wt_gp,1.0,0.0,1
 sden,none,factor,0.4,0.01,0.8,sden_gp,1.0,0.0,1

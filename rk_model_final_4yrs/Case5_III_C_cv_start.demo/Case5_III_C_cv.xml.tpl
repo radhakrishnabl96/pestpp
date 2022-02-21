@@ -321,7 +321,7 @@ ptf #
       </ParameterList>
 
       <ParameterList name="initial condition" type="ParameterList">
-        <Parameter name="hydrostatic head [m]" type="double" value="#ini_WT         #" />
+        <Parameter name="hydrostatic head [m]" type="double" value="#ini_wt         #" />
         <Parameter name="hydrostatic water density [kg m^-3]" type="double" value="1000" />
       </ParameterList>
 
@@ -439,7 +439,7 @@ ptf #
             <Parameter name="components" type="Array(string)" value="{face,cell}" />
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="#ini_T         #" />
+                <Parameter name="value" type="double" value="265" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -543,7 +543,7 @@ ptf #
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="#ini_SD         #" />
+                <Parameter name="value" type="double" value="#ini_sd         #" />
                   <!-- What value do we assign here? The initial condition can be initialized from a spinup or we don't assign anything? -->
               </ParameterList>
             </ParameterList>
