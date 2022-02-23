@@ -15700,3 +15700,159 @@ OPTIMISATION ITERATION NUMBER: 1
   SVD Package: RedSVD
   Model calls so far : 0
 
+
+
+  Starting phi for this iteration                     Total : 0.00501484
+
+
+  Contribution to phi from observation group         "temp" : 0.00250616
+  Contribution to phi from observation group         "mois" : 0.00250868
+  Number of terms in the jacobian equal to zero: 27922 / 398944 (7%)
+
+   ...calculating lambda upgrade vector: 0.1
+  computing upgrade vector (lambda = 0.1)  1 / 5             
+   ...calculating scaled lambda vector-scale factor: 0.1, 0.75
+   ...calculating lambda upgrade vector: 1
+  computing upgrade vector (lambda = 1)  2 / 5             
+   ...calculating scaled lambda vector-scale factor: 1, 0.75
+   ...calculating lambda upgrade vector: 10
+  computing upgrade vector (lambda = 10)  3 / 5             
+   ...calculating scaled lambda vector-scale factor: 10, 0.75
+   ...calculating lambda upgrade vector: 100
+  computing upgrade vector (lambda = 100)  4 / 5             
+   ...calculating scaled lambda vector-scale factor: 100, 0.75
+   ...calculating lambda upgrade vector: 1000
+  computing upgrade vector (lambda = 1000)  5 / 5             
+   ...calculating scaled lambda vector-scale factor: 1000, 0.75
+starting FOSM uncertainty analyses for iteration 0
+
+
+posterior parameter covariance matrix written to file 'Case5_I_cv_cf_v1_rw.1.post.cov'
+
+current parameter uncertainty summary: 
+
+                name          prior_mean         prior_stdev   prior_lower_bound   prior_upper_bound           post_mean          post_stdev    post_lower_bound    post_upper_bound
+             alpha_p                0.01             0.00375              0.0025              0.0175                0.01          0.00374999          0.00250003              0.0175
+             alpha_m          0.00182491         0.000684343         0.000456229           0.0031936          0.00182491         0.000684324         0.000456266          0.00319356
+                 n_p                2.05              0.5125               1.025               3.075                2.05            0.512495             1.02501             3.07499
+                 n_m                2.05              0.5125               1.025               3.075                2.05            0.512417             1.02517             3.07483
+                wr_p            0.224324           0.0841216            0.056081            0.392567            0.224324           0.0841143           0.0560955            0.392553
+                wr_m            0.159488            0.059808            0.039872            0.279104            0.159488           0.0598047           0.0398787            0.279097
+               tcs_p            0.439577            0.164841            0.109894            0.769259            0.439577            0.164808             0.10996            0.769193
+               tcs_m            0.952105            0.357039            0.238026             1.66618            0.952105            0.357029            0.238047             1.66616
+               tcd_p            0.101023           0.0378838           0.0252559            0.176791            0.101023           0.0378835           0.0252563             0.17679
+               tcd_m            0.984405            0.369152            0.246101             1.72271            0.984405            0.369151            0.246103             1.72271
+                af_p             1.50511            0.564418            0.376279             2.63395             1.50511            0.564391            0.376333              2.6339
+                af_m             1.49939            0.562271            0.374847             2.62393             1.49939            0.562267            0.374856             2.62392
+               auf_p            0.486935            0.182601            0.121734            0.852137            0.486935            0.182596            0.121744            0.852127
+               auf_m            0.698884            0.262082            0.174721             1.22305            0.698884             0.26208            0.174724             1.22304
+               por_p            0.637395            0.239023            0.159349             1.11544            0.637395            0.238858            0.159679             1.11511
+               por_m            0.481031            0.180387            0.120258            0.841804            0.481031            0.180348            0.120334            0.841727
+              perm_p         5.34662e-11         2.00498e-11         1.33666e-11         9.35659e-11         5.34662e-11         2.00498e-11         1.33667e-11         9.35657e-11
+              perm_m               1e-13            3.75e-14             2.5e-14            1.75e-13               1e-13         3.74998e-14         2.50004e-14            1.75e-13
+               den_p                 900               337.5                 225                1575                 900             337.499             225.003                1575
+               den_m                1900                 475                 950                2850                1900             474.998             950.004                2850
+           albedo_bg                0.55             0.20625              0.1375              0.9625                0.55            0.206215            0.137569            0.962431
+                e_bg                0.55             0.20625              0.1375              0.9625                0.55            0.206176            0.137647            0.962353
+               pen_w                0.01             0.00375              0.0025              0.0175                0.01          0.00374998          0.00250004              0.0175
+               pen_s                0.02              0.0075               0.005               0.035                0.02          0.00749997          0.00500006           0.0349999
+                z_bg                0.04               0.015                0.01                0.07                0.04           0.0149996           0.0100009           0.0699991
+                 z_s               0.005            0.001875             0.00125             0.00875               0.005          0.00187499          0.00125002          0.00874998
+the above parameter uncertainty summary was written to file 'Case5_I_cv_cf_v1_rw.0.par.usum.csv'
+
+  Summary of GLM lambda upgrade runs:
+    Lambda =     0.10; Type:       normal; length = 5.20e-02;  phi =  0.004053 (80.81% of starting phi)
+    Lambda =     0.10; Type:  scale(0.75); length = 3.90e-02;  phi =  0.004282 (85.40% of starting phi)
+    Lambda =     1.00; Type:       normal; length = 8.95e-03;  phi =  0.004713 (93.99% of starting phi)
+    Lambda =     1.00; Type:  scale(0.75); length = 6.71e-03;  phi =  0.004812 (95.95% of starting phi)
+    Lambda =    10.00; Type:       normal; length = 9.23e-04;  phi =  0.005009 (99.88% of starting phi)
+    Lambda =    10.00; Type:  scale(0.75); length = 6.92e-04;  phi =  0.005011 (99.91% of starting phi)
+    Lambda =   100.00; Type:       normal; length = 9.36e-05;  phi =  0.005014 (99.99% of starting phi)
+    Lambda =   100.00; Type:  scale(0.75); length = 7.02e-05;  phi =  0.005014 (99.99% of starting phi)
+    Lambda =  1000.00; Type:       normal; length = 9.37e-06;  phi =  0.005016 (100.03% of starting phi)
+    Lambda =  1000.00; Type:  scale(0.75); length = 7.03e-06;  phi =  0.005016 (100.02% of starting phi)
+
+  Model calls in iteration 1: 37
+  Total model calls at end of iteration 1: 37
+
+
+  Final phi for this iteration                     Total : 0.00405267
+
+
+  Contribution to phi from observation group         "temp" : 0.00224217
+  Contribution to phi from observation group         "mois" : 0.00181051
+    Iteration 1 Parameter Upgrades (Control File Parameters) 
+      Parameter     Current       Previous       Factor       Relative
+        Name         Value         Value         Change        Change
+      ----------  ------------  ------------  ------------  ------------
+         alpha_p    0.00982631          0.01       1.01768      0.017369
+         alpha_m     0.0012108    0.00182491        1.5072      0.336517
+             n_p       2.04945          2.05       1.00027   0.000269636
+             n_m       2.05173          2.05       1.00084  -0.000844656
+            wr_p      0.215032      0.224324       1.04321     0.0414235
+            wr_m      0.163029      0.159488        1.0222    -0.0222043
+           tcs_p       0.45779      0.439577       1.04143    -0.0414334
+           tcs_m      0.950123      0.952105       1.00209    0.00208171
+           tcd_p      0.103777      0.101023       1.02726    -0.0272606
+           tcd_m      0.984357      0.984405       1.00005   4.88715e-05
+            af_p       1.50343       1.50511       1.00112    0.00111691
+            af_m       1.49939       1.49939             1   2.41601e-07
+           auf_p      0.482101      0.486935       1.01003    0.00992908
+           auf_m      0.698704      0.698884       1.00026   0.000257233
+           por_p      0.594681      0.637395       1.07183     0.0670128
+           por_m      0.480954      0.481031       1.00016   0.000160552
+          perm_p   2.29009e-11   5.34662e-11       2.33468      0.571676
+          perm_m   7.43698e-14         1e-13       1.34463      0.256302
+           den_p           900           900             1             0
+           den_m          1900          1900             1             0
+       albedo_bg      0.556299          0.55       1.01145     -0.011452
+            e_bg      0.561726          0.55       1.02132    -0.0213192
+           pen_w    0.00971329          0.01       1.02952     0.0286705
+           pen_s     0.0189948          0.02       1.05292     0.0502597
+            z_bg     0.0552194          0.04       1.38048     -0.380485
+             z_s         0.005         0.005             1      2.78e-07
+       Maximum changes in "Control File" parameters:
+         Maximum relative change = 0.571676   [perm_p]
+         Maximum factor change = 2.33468   [perm_p]
+
+    Iteration 1 Parameter Upgrades (Transformed Numeric Parameters) 
+      Parameter     Current       Previous       Factor       Relative
+        Name         Value         Value         Change        Change
+      ----------  ------------  ------------  ------------  ------------
+            af_m       1.49939       1.49939             1   2.41601e-07
+            af_p       1.50343       1.50511       1.00112    0.00111691
+       albedo_bg      0.556299          0.55       1.01145     -0.011452
+         alpha_m     0.0012108    0.00182491        1.5072      0.336517
+         alpha_p    0.00982631          0.01       1.01768      0.017369
+           auf_m      0.698704      0.698884       1.00026   0.000257233
+           auf_p      0.482101      0.486935       1.01003    0.00992908
+           den_m          1900          1900             1             0
+           den_p           900           900             1             0
+            e_bg      0.561726          0.55       1.02132    -0.0213192
+             n_m       2.05173          2.05       1.00084  -0.000844656
+             n_p       2.04945          2.05       1.00027   0.000269636
+           pen_s     0.0189948          0.02       1.05292     0.0502597
+           pen_w    0.00971329          0.01       1.02952     0.0286705
+          perm_m   7.43698e-14         1e-13       1.34463      0.256302
+          perm_p   2.29009e-11   5.34662e-11       2.33468      0.571676
+           por_m      0.480954      0.481031       1.00016   0.000160552
+           por_p      0.594681      0.637395       1.07183     0.0670128
+           tcd_m      0.984357      0.984405       1.00005   4.88715e-05
+           tcd_p      0.103777      0.101023       1.02726    -0.0272606
+           tcs_m      0.950123      0.952105       1.00209    0.00208171
+           tcs_p       0.45779      0.439577       1.04143    -0.0414334
+            wr_m      0.163029      0.159488        1.0222    -0.0222043
+            wr_p      0.215032      0.224324       1.04321     0.0414235
+            z_bg     0.0552194          0.04       1.38048     -0.380485
+             z_s         0.005         0.005             1      2.78e-07
+       Maximum changes in "Transformed Numeric" parameters:
+         Maximum relative change = 0.571676   [perm_p]
+         Maximum factor change = 2.33468   [perm_p]
+
+
+OPTIMISATION ITERATION NUMBER: 2
+
+  Iteration type: base parameter solution
+  SVD Package: RedSVD
+  Model calls so far : 37
+

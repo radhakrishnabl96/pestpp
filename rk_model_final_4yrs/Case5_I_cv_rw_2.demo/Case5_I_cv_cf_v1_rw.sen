@@ -1,3 +1,33 @@
                     PARAMETER SENSITIVITIES: CASE Case5_I_cv_cf_v1_rw
 
 
+NUMERIC PARAMETER SENSITIVITIES FOR OPTIMISATION ITERATION NO. 1   ----->
+  Parameter name   Group        Current Value        PEST_CSS_wo_reg
+   alpha_p         alpha_p_gp   0.0100000000000      4.72911995527e-05   
+   alpha_m         alpha_m_gp   0.00182491435340     0.000706761948535   
+   n_p             n_p_gp       2.05000000000        5.59297356233e-07   
+   n_m             n_m_gp       2.05000000000        2.28298112699e-06   
+   wr_p            wr_p_gp      0.224324143460       1.01601357594e-05   
+   wr_m            wr_m_gp      0.159488064810       1.15000665779e-05   
+   tcs_p           tcs_p_gp     0.439576608370       7.93295920525e-06   
+   tcs_m           tcs_m_gp     0.952105064030       1.38919951065e-06   
+   tcd_p           tcd_p_gp     0.101023405920       6.19122488092e-06   
+   tcd_m           tcd_m_gp     0.984405428950       3.66853760625e-07   
+   af_p            af_p_gp      1.50511415040        1.12998832679e-06   
+   af_m            af_m_gp      1.49938912830        4.55752146869e-07   
+   auf_p           auf_p_gp     0.486935413090       2.62235434398e-06   
+   auf_m           auf_m_gp     0.698884028640       8.06538576194e-07   
+   por_p           por_p_gp     0.637394957070       1.01357857386e-05   
+   por_m           por_m_gp     0.481030765290       7.44363026288e-06   
+   perm_p          perm_p_gp    5.34662212720e-11    9219.10093187       
+   perm_m          perm_m_gp    1.00000000000e-13    5688504.97052       
+   den_p           den_p_gp     900.000000000        5.38429334340e-10   
+   den_m           den_m_gp     1900.00000000        3.91615240229e-10   
+   albedo_bg       albedo_bg_gp 0.550000000000       5.78787421533e-06   
+   e_bg            e_bg_gp      0.550000000000       8.44682081310e-06   
+   pen_w           pen_w_gp     0.0100000000000      5.80769213627e-05   
+   pen_s           pen_s_gp     0.0200000000000      2.37595334612e-05   
+   z_bg            z_bg_gp      0.0400000000000      3.31462437951e-05   
+   z_s             albedo_bg_gp 0.00500000000000     0.000108691545231   
+
+
