@@ -332,17 +332,17 @@
           <ParameterList name="peat" type="ParameterList">
             <Parameter name="region" type="string" value="subsurface domain peat" />
             <Parameter name="WRM Type" type="string" value="van Genuchten" />
-            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.0100000000000000" />
-            <Parameter name="van Genuchten n [-]" type="double" value="2.050000000000" />
-            <Parameter name="residual saturation [-]" type="double" value="0.2243241434600" />
+            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="9.826310434693e-03" />
+            <Parameter name="van Genuchten n [-]" type="double" value="2.049447245741" />
+            <Parameter name="residual saturation [-]" type="double" value="0.2365350403059" />
             <Parameter name="smoothing interval width [saturation]" type="double" value="0.1" />
           </ParameterList>
           <ParameterList name="mineral" type="ParameterList">
             <Parameter name="region" type="string" value="subsurface domain mineral" />
             <Parameter name="WRM Type" type="string" value="van Genuchten" />
-            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="1.824914353400e-03" />
-            <Parameter name="van Genuchten n [-]" type="double" value="2.050000000000" />
-            <Parameter name="residual saturation [-]" type="double" value="0.1594880648100" />
+            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="1.210799339531e-03" />
+            <Parameter name="van Genuchten n [-]" type="double" value="2.051731543802" />
+            <Parameter name="residual saturation [-]" type="double" value="0.1630293801684" />
             <Parameter name="smoothing interval width [saturation]" type="double" value="0.1" />
           </ParameterList>
           <ParameterList name="bedrock" type="ParameterList">
@@ -450,18 +450,18 @@
           <ParameterList name="peat" type="ParameterList">
             <Parameter name="region" type="string" value="subsurface domain peat" />
             <Parameter name="thermal conductivity type" type="string" value="three-phase wet/dry" />
-            <Parameter name="thermal conductivity, saturated (unfrozen) [W m^-1 K^-1]" type="double" value="0.43957660837000" />
-            <Parameter name="thermal conductivity, dry [W m^-1 K^-1]" type="double" value="0.10102340592000" />
-            <Parameter name="unsaturated alpha frozen [-]" type="double" value="1.5051141504000" />
-            <Parameter name="unsaturated alpha unfrozen [-]" type="double" value="0.48693541309000" />
+            <Parameter name="thermal conductivity, saturated (unfrozen) [W m^-1 K^-1]" type="double" value="0.45778974058842" />
+            <Parameter name="thermal conductivity, dry [W m^-1 K^-1]" type="double" value="0.10377736807941" />
+            <Parameter name="unsaturated alpha frozen [-]" type="double" value="1.5034330723098" />
+            <Parameter name="unsaturated alpha unfrozen [-]" type="double" value="0.48210059440027" />
           </ParameterList>
           <ParameterList name="mineral" type="ParameterList">
             <Parameter name="region" type="string" value="subsurface domain mineral" />
             <Parameter name="thermal conductivity type" type="string" value="three-phase wet/dry" />
-            <Parameter name="thermal conductivity, saturated (unfrozen) [W m^-1 K^-1]" type="double" value="0.95210506403000" />
-            <Parameter name="thermal conductivity, dry [W m^-1 K^-1]" type="double" value="0.98440542895000" />
-            <Parameter name="unsaturated alpha frozen [-]" type="double" value="1.4993891283000" />
-            <Parameter name="unsaturated alpha unfrozen [-]" type="double" value="0.76877243150400" />
+            <Parameter name="thermal conductivity, saturated (unfrozen) [W m^-1 K^-1]" type="double" value="0.95012305487336" />
+            <Parameter name="thermal conductivity, dry [W m^-1 K^-1]" type="double" value="0.98435731954825" />
+            <Parameter name="unsaturated alpha frozen [-]" type="double" value="1.4993887660460" />
+            <Parameter name="unsaturated alpha unfrozen [-]" type="double" value="0.69870425279738" />
           </ParameterList>
           <ParameterList name="bedrock" type="ParameterList">
             <Parameter name="region" type="string" value="subsurface domain bedrock" />
@@ -600,7 +600,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="0.63739495707000" />
+                <Parameter name="value" type="double" value="0.59468131589251" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -609,7 +609,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="0.48103076529000" />
+                <Parameter name="value" type="double" value="0.48095353488121" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -655,7 +655,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="5.34662212720e-11" />
+                <Parameter name="value" type="double" value="2.29008902819e-11" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -664,7 +664,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="1.00000000000e-13" />
+                <Parameter name="value" type="double" value="7.43698449120e-14" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -1045,13 +1045,13 @@
         <ParameterList name="surface domain" type="ParameterList">
           <!-- The below parameter - dessicated zone thickness is not used in the model -->
           <Parameter name="dessicated zone thickness [m]" type="double" value="0.1" />
-          <Parameter name="roughness length of bare ground [m]" type="double" value="0.0400000000000" />
-          <Parameter name="roughness length of snow [m]" type="double" value="5.00000000e-03" />
+          <Parameter name="roughness length of bare ground [m]" type="double" value="0.0552193919265" />
+          <Parameter name="roughness length of snow [m]" type="double" value="4.99999861e-03" />
           <!-- Is the water transition depth [m] similar to the penetration depth of sw radiation in water from the article? -->  
-          <Parameter name="snow transition depth [m]" type="double" value="0.02000000000000" />
-          <Parameter name="water transition depth [m]" type="double" value="0.01000000000000" />
-          <Parameter name="albedo of bare ground [-]" type="double" value="0.550000000000000044" />
-          <Parameter name="emissivity of bare ground [-]" type="double" value="0.5500000000000" />
+          <Parameter name="snow transition depth [m]" type="double" value="0.01899480660497" />
+          <Parameter name="water transition depth [m]" type="double" value="9.7132949573e-03" />
+          <Parameter name="albedo of bare ground [-]" type="double" value="0.556298600711923052" />
+          <Parameter name="emissivity of bare ground [-]" type="double" value="0.5617255431087" />
         </ParameterList>
       </ParameterList>
 

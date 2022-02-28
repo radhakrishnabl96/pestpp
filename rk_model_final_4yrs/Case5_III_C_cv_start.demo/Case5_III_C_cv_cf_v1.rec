@@ -15592,3 +15592,49 @@
     Save multiple PAR files                                      : no
 
 
+                             OPTIMISATION RECORD
+
+
+ INITIAL CONDITIONS: 
+    Sum of squared weighted residuals (ie phi)               =  5.23343E-03
+    Contribution to phi from observation group "temp"        =  9.42009E-04
+    Contribution to phi from observation group "mois"        =  4.29142E-03
+
+       Current parameter values
+       alpha_p         1.000000E-02
+       alpha_m         1.824914E-03
+       n_p              2.05000    
+       n_m              2.05000    
+       wr_p            0.224324    
+       wr_m            0.159488    
+       tcs_p           0.439577    
+       tcs_m           0.952105    
+       tcd_p           0.101023    
+       tcd_m           0.984405    
+       af_p             1.50511    
+       af_m             1.49939    
+       auf_p           0.486935    
+       auf_m           0.698884    
+       por_p           0.637395    
+       por_m           0.481031    
+       perm_p          5.346622E-11
+       perm_m          1.000000E-13
+       den_p            900.000    
+       den_m            1900.00    
+       albedo_bg       0.550000    
+       e_bg            0.550000    
+       pen_w           1.000000E-02
+       pen_s           2.000000E-02
+       z_bg            4.000000E-02
+       z_s             5.000000E-03
+       ini_sd          0.150000    
+       ini_wt           1.00000    
+       sden            0.400000    
+
+
+ OPTIMISATION ITERATION NO.        : 1
+    Model calls so far             : 1
+    Starting phi for this iteration                          :  5.23343E-03
+    Contribution to phi from observation group "temp"        :  9.42009E-04
+    Contribution to phi from observation group "mois"        :  4.29142E-03
+    Run failure - PEST is repeating model run.

@@ -333,7 +333,7 @@
             <Parameter name="region" type="string" value="subsurface domain peat" />
             <Parameter name="WRM Type" type="string" value="van Genuchten" />
             <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="     1.0000000E-02" />
-            <Parameter name="van Genuchten n [-]" type="double" value=" 2.0500000E+00" />
+            <Parameter name="van Genuchten n [-]" type="double" value=" 2.2550000E+00" />
             <Parameter name="residual saturation [-]" type="double" value="  2.2432414E-01" />
             <Parameter name="smoothing interval width [saturation]" type="double" value="0.1" />
           </ParameterList>
