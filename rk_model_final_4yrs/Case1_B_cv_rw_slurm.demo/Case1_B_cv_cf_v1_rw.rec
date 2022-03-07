@@ -10,8 +10,8 @@ binary compiled on Feb 21 2022 at 13:51:30
 using control file: "Case1_B_cv_cf_v1_rw.pst"
 
 in directory: "/bigwork/nhgjrabl/Simulations/pestpp/rk_model_final_4yrs/Case1_B_cv_rw_slurm.demo"
-on host: "enos-n022"
-started at 02/28/22 09:40:04
+on host: "amo-n009"
+started at 03/01/22 09:45:27
 
 Note: 3 unused lines in pest control file:
   -->  line number 6: '2.000000E+01  -3.000000E+00   3.000000E-01   1.000000E-02        -7' 
