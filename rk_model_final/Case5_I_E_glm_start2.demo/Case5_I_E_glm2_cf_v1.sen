@@ -1,0 +1,132 @@
+                PARAMETER SENSITIVITIES: CASE Case5_I_E_glm2_cf_v1
+
+
+ OPTIMISATION ITERATION NO.  1 ----->
+ Parameter name    Group          Current value    Sensitivity
+   alpha_p         alpha_p_gp      1.000000E-02     5.273672E-04
+   alpha_m         alpha_m_gp      1.824914E-03     1.017187E-02
+   n_p             n_p_gp           1.50000         2.991089E-05
+   n_m             n_m_gp           2.05000         3.297938E-05
+   wr_p            wr_p_gp         0.100000         1.212145E-04
+   wr_m            wr_m_gp         0.159488         1.319818E-04
+   tcs_p           tcs_p_gp        0.439577         6.683254E-05
+   tcs_m           tcs_m_gp        0.952105         6.859601E-06
+   tcd_p           tcd_p_gp        0.101023         3.672205E-05
+   tcd_m           tcd_m_gp        0.984405         1.390064E-06
+   af_p            af_p_gp          1.50511         5.847177E-06
+   af_m            af_m_gp          1.49939         2.211829E-06
+   auf_p           auf_p_gp        0.486935         1.383095E-05
+   auf_m           auf_m_gp        0.698884         3.974048E-07
+   por_p           por_p_gp        0.637390         7.165475E-05
+   por_m           por_m_gp        0.481031         7.272693E-05
+   perm_p          perm_p_gp       5.346622E-11      30556.8    
+   perm_m          perm_m_gp       1.000000E-13     5.368524E+07
+   den_p           den_p_gp         900.000         1.476980E-09
+   den_m           den_m_gp         1900.00         3.749517E-09
+   albedo_bg       albedo_bg_gp    0.550000         6.219219E-05
+   e_bg            e_bg_gp         0.750000         7.334674E-05
+   pen_w           pen_w_gp        1.000000E-02     1.935921E-07
+   pen_s           pen_s_gp        2.000000E-02     1.984124E-05
+   z_bg            z_bg_gp         4.000000E-02     2.166090E-04
+   z_s             z_s_gp          5.000000E-03     1.002656E-04
+
+
+
+                        COMPLETION OF OPTIMISATION PROCESS
+
+ Composite sensitivities for observation group "temp" ----->
+
+ Number of observations with non-zero weight =  2555
+ Parameter name    Group          Current value    Sensitivity
+   alpha_p         alpha_p_gp      1.000000E-02     8.289311E-05
+   alpha_m         alpha_m_gp      1.824914E-03     9.198045E-04
+   n_p             n_p_gp           1.50000         5.902094E-06
+   n_m             n_m_gp           2.05000         1.847150E-06
+   wr_p            wr_p_gp         0.100000         1.806716E-05
+   wr_m            wr_m_gp         0.159488         1.071393E-05
+   tcs_p           tcs_p_gp        0.439577         1.298611E-05
+   tcs_m           tcs_m_gp        0.952105         2.423205E-06
+   tcd_p           tcd_p_gp        0.101023         5.360204E-06
+   tcd_m           tcd_m_gp        0.984405         6.813069E-07
+   af_p            af_p_gp          1.50511         2.234687E-06
+   af_m            af_m_gp          1.49939         3.650832E-07
+   auf_p           auf_p_gp        0.486935         3.047992E-06
+   auf_m           auf_m_gp        0.698884         4.574112E-08
+   por_p           por_p_gp        0.637390         5.550338E-06
+   por_m           por_m_gp        0.481031         6.602120E-06
+   perm_p          perm_p_gp       5.346622E-11      4283.11    
+   perm_m          perm_m_gp       1.000000E-13     3.530093E+06
+   den_p           den_p_gp         900.000         3.055769E-10
+   den_m           den_m_gp         1900.00         6.966723E-10
+   albedo_bg       albedo_bg_gp    0.550000         1.439384E-05
+   e_bg            e_bg_gp         0.750000         2.379043E-05
+   pen_w           pen_w_gp        1.000000E-02     7.026876E-08
+   pen_s           pen_s_gp        2.000000E-02     3.850323E-05
+   z_bg            z_bg_gp         4.000000E-02     5.760652E-05
+   z_s             z_s_gp          5.000000E-03     1.722988E-04
+
+
+
+ Composite sensitivities for observation group "mois" ----->
+
+ Number of observations with non-zero weight =  2555
+ Parameter name    Group          Current value    Sensitivity
+   alpha_p         alpha_p_gp      1.000000E-02     1.051472E-03
+   alpha_m         alpha_m_gp      1.824914E-03     2.032293E-02
+   n_p             n_p_gp           1.50000         5.952991E-05
+   n_m             n_m_gp           2.05000         6.593289E-05
+   wr_p            wr_p_gp         0.100000         2.417548E-04
+   wr_m            wr_m_gp         0.159488         2.637461E-04
+   tcs_p           tcs_p_gp        0.439577         1.330328E-04
+   tcs_m           tcs_m_gp        0.952105         1.350350E-05
+   tcd_p           tcd_p_gp        0.101023         7.324823E-05
+   tcd_m           tcd_m_gp        0.984405         2.695353E-06
+   af_p            af_p_gp          1.50511         1.147885E-05
+   af_m            af_m_gp          1.49939         4.408568E-06
+   auf_p           auf_p_gp        0.486935         2.749346E-05
+   auf_m           auf_m_gp        0.698884         7.934923E-07
+   por_p           por_p_gp        0.637390         1.432020E-04
+   por_m           por_m_gp        0.481031         1.453039E-04
+   perm_p          perm_p_gp       5.346622E-11      60963.3    
+   perm_m          perm_m_gp       1.000000E-13     1.073124E+08
+   den_p           den_p_gp         900.000         2.938112E-09
+   den_m           den_m_gp         1900.00         7.466602E-09
+   albedo_bg       albedo_bg_gp    0.550000         1.235487E-04
+   e_bg            e_bg_gp         0.750000         1.447515E-04
+   pen_w           pen_w_gp        1.000000E-02     3.807543E-07
+   pen_s           pen_s_gp        2.000000E-02     9.602078E-06
+   z_bg            z_bg_gp         4.000000E-02     4.293709E-04
+   z_s             z_s_gp          5.000000E-03     1.025958E-04
+
+
+
+ Composite sensitivities for all observations/prior info ----->
+
+ Number of observations with non-zero weight =  5110
+ Parameter name    Group          Current value    Sensitivity
+   alpha_p         alpha_p_gp      1.000000E-02     5.273672E-04
+   alpha_m         alpha_m_gp      1.824914E-03     1.017187E-02
+   n_p             n_p_gp           1.50000         2.991089E-05
+   n_m             n_m_gp           2.05000         3.297938E-05
+   wr_p            wr_p_gp         0.100000         1.212145E-04
+   wr_m            wr_m_gp         0.159488         1.319818E-04
+   tcs_p           tcs_p_gp        0.439577         6.683254E-05
+   tcs_m           tcs_m_gp        0.952105         6.859601E-06
+   tcd_p           tcd_p_gp        0.101023         3.672205E-05
+   tcd_m           tcd_m_gp        0.984405         1.390064E-06
+   af_p            af_p_gp          1.50511         5.847177E-06
+   af_m            af_m_gp          1.49939         2.211829E-06
+   auf_p           auf_p_gp        0.486935         1.383095E-05
+   auf_m           auf_m_gp        0.698884         3.974048E-07
+   por_p           por_p_gp        0.637390         7.165475E-05
+   por_m           por_m_gp        0.481031         7.272693E-05
+   perm_p          perm_p_gp       5.346622E-11      30556.8    
+   perm_m          perm_m_gp       1.000000E-13     5.368524E+07
+   den_p           den_p_gp         900.000         1.476980E-09
+   den_m           den_m_gp         1900.00         3.749517E-09
+   albedo_bg       albedo_bg_gp    0.550000         6.219219E-05
+   e_bg            e_bg_gp         0.750000         7.334674E-05
+   pen_w           pen_w_gp        1.000000E-02     1.935921E-07
+   pen_s           pen_s_gp        2.000000E-02     1.984124E-05
+   z_bg            z_bg_gp         4.000000E-02     2.166090E-04
+   z_s             z_s_gp          5.000000E-03     1.002656E-04

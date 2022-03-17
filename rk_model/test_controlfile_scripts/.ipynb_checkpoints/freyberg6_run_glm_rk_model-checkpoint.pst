@@ -1,0 +1,85 @@
+\ The following script was copied by combining Figure 4.1 and Figure 4.2 in https://github.com/usgs/pestpp/blob/develop/documentation/pestpp_users_manual.md#s8
+\ This is a draft script for the rk model
+\ The comments about each line are always provided beneath each line
+\ The variables that need to change are indicated by (C). The test of the variables do not need to change (Probably when the program does not run, we need to rethink).
+\ Limit the number of characters to 6
+pcf
+* control data
+restart estimation \ RSTFLE PESTMODE (C)
+4 12 1 0 2 \ NPAR NOBS NPARGP NPRIOR NOBSGP (C)
+2 3 single point 1 \ NTPLFLE (C) NINSFLE (C) PRECIS DPOINT [NUMCOM] (C)
+\ How many template and instruction files do we need to define? 
+\ One template/instruction file per parameter/observation? 
+10.0 -3.0 0.3 0.03 10 \ RLAMBDA1 RLAMFAC PHIRATSUF PHIREDLAM NUMLAM
+\ Defining the parameters for Marquardt lambda approach, however it is not used in PESTpp
+\ Only defining it for PESTCHEK friendliness
+10.0 10.0 0.001 \ RELPARMAX FACPARMAX FACORIG
+\ Variables defined to constrain the objective function from oscillations
+0.1 \ PHIREDSWH
+\ It defines the limit above which successive iterations will be switched from forward to central derivative calculation (Necessary when the comuptation time is slow). 
+50 0.005 4 4 0.005 4 \ NOPTMAX (C) PHIREDSTP NPHISTP NPHINORED RELPARSTP NRELPAR
+\ Termination variables
+\ Imp - NOPTMAX, an integer variable, sets the maximum number of iterations that an inversion or optimization process is allowed to run.
+\ NOPTMAX = 0, to check if the setup is done properly
+0 0 0 \ ICOV ICOR IEIG
+\PESTPP-GLM does not use any of these variables and it is recommended to set these valeus to 0
+\ The Singular Value Decomposition method section is considered in PESTPP to solve the ill-posed inverse problem for ensuring numerical stability
+
+* parameter groups
+ro relative 0.01 0.0 switch 2.0 parabolic \ PARGPNME INCTYP DERINC DERINCLB FORCEN DERINCMUL DERMTHD (C)
+h relative 0.01 0.0 switch 2.0 parabolic \ PARGPNME INCTYP DERINC DERINCLB FORCEN DERINCMUL DERMTHD (C)
+\ PARGPNME - Parameter group name, 
+\ INCTYP - Increment type for forward difference calculation, if it is 'relative' - than DERINC is the fraction that the parameter is incremented by
+\ About DERMTHD and switch - On most occasions, FORCEN should be set to “switch” while DERMTHD should be set to “parabolic”.
+* parameter data
+\ (one such line for each parameter)
+ro1 fixed factor 0.5 .1 10 ro 1.0 0.0 \ PARNME (C) PARTRANS (C) PARCHGLIM (C) PARVAL1 (C) PARLBND (C) PARUBND (C) PARGP (C) SCALE OFFSET DERCOM 
+ro2 log factor 5.0 .1 10 ro 1.0 0.0 \ PARNME (C) PARTRANS (C) PARCHGLIM (C) PARVAL1 (C) PARLBND (C) PARUBND (C) PARGP (C) SCALE OFFSET DERCOM 
+ro3 tied factor 0.5 .1 10 ro 1.0 0.0 \ PARNME (C) PARTRANS (C) PARCHGLIM (C) PARVAL1 (C) PARLBND (C) PARUBND (C) PARGP (C) SCALE OFFSET DERCOM 
+h1 none factor 2.0 .05 100 h 1.0 0.0 \ PARNME (C) PARTRANS (C) PARCHGLIM (C) PARVAL1 (C) PARLBND (C) PARUBND (C) PARGP (C) SCALE OFFSET DERCOM 
+h2 log factor 5.0 .05 100 h 1.0 0.0 \ PARNME (C) PARTRANS (C) PARCHGLIM (C) PARVAL1 (C) PARLBND (C) PARUBND (C) PARGP (C) SCALE OFFSET DERCOM 
+ro3 ro2 \ We do not have any tied parameters
+* observation groups
+obsgp1 \OBGNME
+obsgp2 \OBGNME
+\ We would have two observation groups - One for temperature and another for moisture
+prgp1 \ What is this observation group? It is not provided in the observation data
+* observation data
+\ We would require the definition of csv files where the observation data is located
+ar1 1.21038 1.0 obsgp1 \ OBSNME OBSVAL WEIGHT OBGNME (C)
+ar2 1.51208 1.0 obsgp1 \ OBSNME OBSVAL WEIGHT OBGNME (C)
+ar3 2.07204 1.0 obsgp1 \ OBSNME OBSVAL WEIGHT OBGNME (C)
+ar4 2.94056 1.0 obsgp1 \ OBSNME OBSVAL WEIGHT OBGNME (C)
+ar5 4.15787 1.0 obsgp1 \ OBSNME OBSVAL WEIGHT OBGNME
+ar6 5.7762 1.0 obsgp1 \ OBSNME OBSVAL WEIGHT OBGNME
+ar7 7.7894 1.0 obsgp1 \ OBSNME OBSVAL WEIGHT OBGNME
+ar8 9.99743 1.0 obsgp1 \ OBSNME OBSVAL WEIGHT OBGNME
+ar9 11.8307 1.0 obsgp2 \ OBSNME OBSVAL WEIGHT OBGNME
+ar10 12.3194 1.0 obsgp2 \ OBSNME OBSVAL WEIGHT OBGNME
+ar11 10.6003 1.0 obsgp2 \ OBSNME OBSVAL WEIGHT OBGNME
+ar12 7.00419 1.0 obsgp2 \ OBSNME OBSVAL WEIGHT OBGNME
+ar13 3.44391 1.0 obsgp2 \ OBSNME OBSVAL WEIGHT OBGNME
+ar14 1.58279 1.0 obsgp2 \ OBSNME OBSVAL WEIGHT OBGNME
+ar15 1.1038 1.0 obsgp2 \ OBSNME OBSVAL WEIGHT OBGNME
+ar16 1.03086 1.0 obsgp2 \ OBSNME OBSVAL WEIGHT OBGNME
+ar17 1.01318 1.0 obsgp2 \ OBSNME OBSVAL WEIGHT OBGNME
+ar18 1.00593 0.0 obsgp2 \ OBSNME OBSVAL WEIGHT OBGNME
+ar19 1.00272 0.0 obsgp2 \ OBSNME OBSVAL WEIGHT OBGNME
+* model command line
+model.bat \ COMLINE
+* model inputoutput \ Why also output?
+ves1.tpl a_model.in1 \ TEMPFLE INFLE
+ves2.tpl a_model.in2 \ TEMPFLE INFLE
+\ Linking template files to input files - For ATS we will link it to the xml file
+* model output
+ves1.ins a_model.ot1 \ INSFLE OUTFLE
+ves2.ins a_model.ot2 \ INSFLE OUTFLE
+ves3.ins a_model.ot3 \ INSFLE OUTFLE
+\ Linking instruction files to the output files - For ATS we will link it to the .dat file
+* prior information
+pi1 1.0 * h1 = 1.0 3.0 prgp1 \ PILBL PIFAC * PARNME + PIFAC * log(PARNME) ... = PIVAL WEIGHT OBGNME
+pi2 1.0 * log(ro2) + 1.0 * log(h2) = 2.6026 2.0 prgp1 \ PILBL PIFAC * PARNME + PIFAC * log(PARNME) ... = PIVAL WEIGHT OBGNME
+* regularization
+125.0 130.0 0.1000000 \ PHIMLIM PHIMACCEPT [FRACPHIM]
+1.0 1.0e-10 1.0e10 \ PHIMLIM PHIMACCEPT [FRACPHIM]
+1.3 1.0e-2 1 \ PHIMLIM PHIMACCEPT [FRACPHIM]

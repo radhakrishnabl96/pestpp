@@ -1,0 +1,16 @@
+             pestpp-ies.exe - a GLM iterative Ensemble Smoother
+for PEST(++) datasets 
+
+                 by the PEST++ developement team
+
+
+
+
+
+version: 5.0.11
+binary compiled on Oct 20 2021 at 11:34:45
+
+using control file: "freyberg6_run_ies"
+in directory: "/home/rk/pestpp/pestpp/benchmarks/mf6_freyberg"
+on host: "rk-virtual-machine"
+

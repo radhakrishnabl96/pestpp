@@ -1,0 +1,27 @@
+                    PARAMETER SENSITIVITIES: CASE rk_model_glm_cf
+
+
+NUMERIC PARAMETER SENSITIVITIES FOR OPTIMISATION ITERATION NO. 1   ----->
+  Parameter name   Group        Current Value        PEST_CSS_wo_reg
+   n_m             hydraulic    1.20000000000        4.28231578637e-06   
+   tcs_m           thermal      1.00000000000        2.20237248037e-06   
+   af_m            hydraulic    0.0500000000000      3.10402038254e-05   
+   af_p            hydraulic    0.00500000000000     0.000334100531628   
+
+
+NUMERIC PARAMETER SENSITIVITIES FOR OPTIMISATION ITERATION NO. 2   ----->
+  Parameter name   Group        Current Value        PEST_CSS_wo_reg
+   n_m             hydraulic    1.20000000003        3.93074110610e-06   
+   tcs_m           thermal      1.00000000002        2.40157390298e-06   
+   af_m            hydraulic    0.0498660619607      4.42588934719e-05   
+   af_p            hydraulic    0.00550000000000     0.000200256825689   
+
+
+NUMERIC PARAMETER SENSITIVITIES FOR OPTIMISATION ITERATION NO. 3   ----->
+  Parameter name   Group        Current Value        PEST_CSS_wo_reg
+   n_m             hydraulic    1.20000000003        4.78173263178e-06   
+   tcs_m           thermal      1.00000000002        2.99962346142e-06   
+   af_m            hydraulic    0.0498649945825      2.44960822395e-05   
+   af_p            hydraulic    0.00549450133100     0.000228891277506   
+
+

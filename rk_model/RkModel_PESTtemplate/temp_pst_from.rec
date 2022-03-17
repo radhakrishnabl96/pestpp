@@ -1,0 +1,15 @@
+             pestpp-glm 5.0.11
+
+    by The PEST++ Development Team
+
+
+
+version: 5.0.11
+binary compiled on Oct 20 2021 at 11:34:39
+
+using control file: "temp_pst_from.pst"
+
+in directory: "/home/rk/pestpp/pestpp/rk_model/RkModel_PESTtemplate"
+on host: "rk-virtual-machine"
+
+control file parsing error: observation covariance matrix detected for group 'TEMPMOIS_USECOL:POINT' - these are not supported...yet!

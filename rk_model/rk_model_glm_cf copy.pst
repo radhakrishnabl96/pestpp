@@ -1,0 +1,26 @@
+pcf version=2
+* control data keyword
+pestmode                                 estimation
+noptmax                                 0
+* parameter groups external
+rk_model_glm.pargrp_data.csv
+* parameter data external
+rk_model_glm.par_data.csv
+* observation data external
+rk_model_glm.obs_data.csv
+* model command line
+ats
+* model input
+rk_model_glm_input.xml.tpl rk_model_glm_input.xml
+* model output
+rk_model_glm.obs_data.dat.ins rk_model_glm.obs_data.dat
+
+# The following file was copied from /home/rk/pestpp/pestpp/benchmarks/mf6_freyberg/template/freyberg6_run_glm.pst
+# The following script was copied by combining Figure 4.1 and Figure 4.2 in https://github.com/usgs/pestpp/blob/develop/documentation/pestpp_users_manual.md#s8
+# This is a draft script for the rk model
+# The comments about each line are always provided beneath each line
+# The variables that need to change are indicated by (C). The test of the variables do not need to change (Probably when the program does not run, we need to rethink).
+# Limit the number of characters to 6
+# These files must have the same number of entries on each line and the location of these files in the 
+# user’s directory structure must be the path from where the control file is located to where the external file is located.
+# For the first stage, the PEST is run with only the basic requirements for PEST with only the estimation mode

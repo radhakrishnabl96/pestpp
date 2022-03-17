@@ -1,0 +1,16 @@
+             pestpp-sen: a tool for global sensitivity analysis
+
+                         by The PEST++ Development Team
+
+
+
+version: 5.0.11
+binary compiled on Oct 20 2021 at 11:34:30
+
+using control file: "freyberg6_run_sen.pst"
+in directory: "/home/rk/pestpp/pestpp/benchmarks/mf6_freyberg"
+on host: "rk-virtual-machine"
+
+Error prococessing control file: freyberg6_run_sen.pst
+
+PestFileError:  Error opening file: "freyberg6_run_sen.pst"

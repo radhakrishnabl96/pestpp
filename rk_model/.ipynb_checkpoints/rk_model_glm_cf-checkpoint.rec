@@ -1,0 +1,15 @@
+             pestpp-glm 5.0.11
+
+    by The PEST++ Development Team
+
+
+
+version: 5.0.11
+binary compiled on Oct 20 2021 at 11:34:39
+
+using control file: "rk_model_glm_cf.pst"
+
+in directory: "/home/rk/pestpp/pestpp/rk_model"
+on host: "rk-virtual-machine"
+
+control file parsing error: fist line of control file should be 'PCF' not #

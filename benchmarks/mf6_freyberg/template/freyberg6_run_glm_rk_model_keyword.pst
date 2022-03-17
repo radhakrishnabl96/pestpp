@@ -1,0 +1,37 @@
+~ The following script was copied by combining Figure 4.1 and Figure 4.2 in https://github.com/usgs/pestpp/blob/develop/documentation/pestpp_users_manual.md#s8
+~ This is a draft script for the rk model
+~ The comments about each line are always provided beneath each line
+~ The variables that need to change are indicated by (C). The test of the variables do not need to change (Probably when the program does not run, we need to rethink).
+~ Limit the number of characters to 6
+~ These files must have the same number of entries on each line and the location of these files in the 
+~ user’s directory structure must be the path from where the control file is located to where the external file is located.
+~ comment line
+pcf
+* control data keyword ~ more comments here:
+pestmode estimation
+maxsing 100
+~Phimlim 1234 variable commented out
+forecasts ar18,ar19
+Parcov param.unc ~ the prior cov matrix in unc file format
+lambdas 0.1, 1.0, 10,100 ~some lambda values
+n_iter_base -1
+n_iter_super 4
+base_jacobian pest.jcb
+par_sigma_range 6
+ies_par_en par.jcb
+* parameter data external
+Par_hk.csv
+Par_rech.dat sep w missing_values nan
+~ observation data split into separate file for each type
+* observation data external
+head_obs.dat sep w missing_values missing
+flux_obs.csv
+additional_valuable_obs.csv
+* model command line
+model.bat
+* model input external
+Model_input.csv
+* model output external
+Model_output.csv
+* prior information external
+Pi.csv

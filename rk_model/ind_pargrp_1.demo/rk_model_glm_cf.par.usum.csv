@@ -1,0 +1,5 @@
+name,prior_mean,prior_stdev,prior_lower_bound,prior_upper_bound,post_mean,post_stdev,post_lower_bound,post_upper_bound
+N_M,1.2,0.4875,0.225,2.175,1.2,0.487485,0.225029,2.17497
+TCS_M,1,0.425,0.15,1.85,1,0.424996,0.150008,1.84999
+AF_M,0.05,0.02,0.01,0.09,0.0500051,0.02,0.0100051,0.0900051
+AF_P,0.005,0.002,0.001,0.009,0.0055,0.002,0.0015,0.0095

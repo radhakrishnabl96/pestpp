@@ -1,0 +1,51 @@
+                    PARAMETER SENSITIVITIES: CASE rk_model_glm_cf_v1_mois_rw
+
+
+NUMERIC PARAMETER SENSITIVITIES FOR OPTIMISATION ITERATION NO. 1   ----->
+  Parameter name   Group        Current Value        PEST_CSS_wo_reg
+   n_m             n_m_gp       1.20000000000        3.02120373069e-05   
+   tcs_m           tcs_m_gp     1.00000000000        9.43377721981e-06   
+   af_m            af_m_gp      0.0500000000000      2.12486853869e-05   
+   af_p            af_p_gp      0.00500000000000     0.000350101806110   
+
+
+NUMERIC PARAMETER SENSITIVITIES FOR OPTIMISATION ITERATION NO. 2   ----->
+  Parameter name   Group        Current Value        PEST_CSS_wo_reg
+   n_m             n_m_gp       1.16862783704        4.01703154447e-05   
+   tcs_m           tcs_m_gp     1.00265125624        8.89139135074e-06   
+   af_m            af_m_gp      0.0337228798679      4.60499935692e-05   
+   af_p            af_p_gp      0.00796877107400     0.000250785184617   
+
+
+NUMERIC PARAMETER SENSITIVITIES FOR OPTIMISATION ITERATION NO. 3   ----->
+  Parameter name   Group        Current Value        PEST_CSS_wo_reg
+   n_m             n_m_gp       1.15197397686        4.93247114093e-05   
+   tcs_m           tcs_m_gp     1.00379378624        9.46780289496e-06   
+   af_m            af_m_gp      0.0200000000000      0.000103950208744   
+   af_p            af_p_gp      0.00373111905700     0.000762593538585   
+
+
+NUMERIC PARAMETER SENSITIVITIES FOR OPTIMISATION ITERATION NO. 4   ----->
+  Parameter name   Group        Current Value        PEST_CSS_wo_reg
+   n_m             n_m_gp       1.13648811085        5.66975631229e-05   
+   tcs_m           tcs_m_gp     1.00278651071        1.01785264944e-05   
+   af_m            af_m_gp      0.0200000000000      6.80599396340e-05   
+   af_p            af_p_gp      0.00200000000000     0.000755177526372   
+
+
+NUMERIC PARAMETER SENSITIVITIES FOR OPTIMISATION ITERATION NO. 5   ----->
+  Parameter name   Group        Current Value        PEST_CSS_wo_reg
+   n_m             n_m_gp       1.12242290719        6.51012546197e-05   
+   tcs_m           tcs_m_gp     1.00382782783        9.57286725396e-06   
+   af_m            af_m_gp      0.0200000000000      7.20411322523e-05   
+   af_p            af_p_gp      0.00200000000000     0.000815588396367   
+
+
+NUMERIC PARAMETER SENSITIVITIES FOR OPTIMISATION ITERATION NO. 6   ----->
+  Parameter name   Group        Current Value        PEST_CSS_wo_reg
+   n_m             n_m_gp       1.12241994097        6.51700602638e-05   
+   tcs_m           tcs_m_gp     1.00382837473        9.75195924865e-06   
+   af_m            af_m_gp      0.0200009149995      8.00187708830e-05   
+   af_p            af_p_gp      0.00200748723600     0.000960351636547   
+
+

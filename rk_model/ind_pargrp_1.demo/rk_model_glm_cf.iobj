@@ -1,0 +1,3 @@
+iteration,model_runs_completed,total_phi,measurement_phi,regularization_phi,temp,mois
+0,0,0.000226401,0.000226401,0,0.000222253,4.14765e-06
+1,15,0.000225791,0.000225791,0,0.000221648,4.14221e-06
