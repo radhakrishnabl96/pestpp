@@ -10,8 +10,8 @@ binary compiled on Feb 21 2022 at 13:51:30
 using control file: "Case1_B_cv_cf_v1_rw.pst"
 
 in directory: "/bigwork/nhgjrabl/Simulations/pestpp/rk_model_final_4yrs/Case1_B_cv_rw_slurm.demo"
-on host: "amo-n009"
-started at 03/01/22 09:45:27
+on host: "amo-n002"
+started at 03/17/22 13:04:41
 
 Note: 3 unused lines in pest control file:
   -->  line number 6: '2.000000E+01  -3.000000E+00   3.000000E-01   1.000000E-02        -7' 
@@ -15689,45 +15689,3 @@ OPTIMISATION ITERATION NUMBER: 1
   SVD Package: RedSVD
   Model calls so far : 0
 
-WARNING: jacobian matrix has no non-zeros - the parameter pertubations 
-         have no effect on the control file observations.
-         This usually means something is not setup correctly.
-
-
-  Starting phi for this iteration                     Total : 0.00281784
-
-
-  Contribution to phi from observation group         "temp" : 0.000182028
-  Contribution to phi from observation group         "mois" : 0.00263581
-  Number of terms in the jacobian equal to zero: 0 / 0 (-nan%)
-
-
-    Parameters whose perturbation runs failed while computing jacobian
-      Parameter     Failed
-        Name        Value
-      ----------  ------------
-          WR_M      0.175437
-         TCS_M       1.04732
-         TCD_M       1.08285
-          AF_P       1.65563
-       ALPHA_M    0.00200741
-         POR_M      0.529134
-         AUF_P      0.535629
-         DEN_P           990
-         TCS_P      0.483534
-         POR_P      0.701134
-       ALPHA_P         0.011
-           N_P         2.255
-         TCD_P      0.111126
-         DEN_M          2090
-          WR_P      0.246757
-          AF_M       1.64933
-        PERM_P   5.88128e-11
-         AUF_M      0.768772
-           N_M         2.255
-        PERM_M       1.1e-13
-
-
-
-SVDSolver::iteration_upgrd() error: no parameter runs in jacobian, cannot continue
-Error encountered, cannot continue

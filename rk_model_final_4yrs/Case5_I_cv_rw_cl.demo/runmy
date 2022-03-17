@@ -1,0 +1,1 @@
+mpirun  singularity exec /bigwork/nhgjrabl/Singularity/ats_pest_final_2.sif pestpp-glm Case5_I_cv_cf_v1_rw.pst

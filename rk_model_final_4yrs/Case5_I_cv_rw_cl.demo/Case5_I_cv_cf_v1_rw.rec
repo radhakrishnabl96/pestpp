@@ -10,8 +10,8 @@ binary compiled on Feb 21 2022 at 13:51:30
 using control file: "Case5_I_cv_cf_v1_rw.pst"
 
 in directory: "/bigwork/nhgjrabl/Simulations/pestpp/rk_model_final_4yrs/Case5_I_cv_rw_cl.demo"
-on host: "amo-n003"
-started at 03/07/22 08:01:42
+on host: "amo-n045"
+started at 03/09/22 16:11:23
 
 Note: 3 unused lines in pest control file:
   -->  line number 6: '2.000000E+01  -3.000000E+00   3.000000E-01   1.000000E-02        -7' 
@@ -15699,4 +15699,181 @@ OPTIMISATION ITERATION NUMBER: 1
   Iteration type: base parameter solution
   SVD Package: RedSVD
   Model calls so far : 0
+
+
+
+  Starting phi for this iteration                     Total : 0.00501484
+
+
+  Contribution to phi from observation group         "temp" : 0.00250616
+  Contribution to phi from observation group         "mois" : 0.00250868
+  Number of terms in the jacobian equal to zero: 16133 / 199472 (8.1%)
+
+
+    Parameters whose perturbation runs failed while computing jacobian
+      Parameter     Failed
+        Name        Value
+      ----------  ------------
+           Z_S        0.0055
+         TCS_P      0.483534
+         TCS_M       1.04732
+        PERM_P   5.88128e-11
+          WR_P      0.246757
+           N_P         2.255
+           N_M         2.255
+         POR_M      0.529134
+         AUF_M      0.768772
+       ALPHA_M    0.00200741
+          WR_M      0.175437
+       ALPHA_P         0.011
+          AF_P       1.65563
+
+   ...calculating lambda upgrade vector: 0.1
+  computing upgrade vector (lambda = 0.1)  1 / 5             
+   ...calculating scaled lambda vector-scale factor: 0.1, 0.75
+   ...calculating lambda upgrade vector: 1
+  computing upgrade vector (lambda = 1)  2 / 5             
+   ...calculating scaled lambda vector-scale factor: 1, 0.75
+   ...calculating lambda upgrade vector: 10
+  computing upgrade vector (lambda = 10)  3 / 5             
+   ...calculating scaled lambda vector-scale factor: 10, 0.75
+   ...calculating lambda upgrade vector: 100
+  computing upgrade vector (lambda = 100)  4 / 5             
+   ...calculating scaled lambda vector-scale factor: 100, 0.75
+   ...calculating lambda upgrade vector: 1000
+  computing upgrade vector (lambda = 1000)  5 / 5             
+   ...calculating scaled lambda vector-scale factor: 1000, 0.75
+starting FOSM uncertainty analyses for iteration 0
+
+
+posterior parameter covariance matrix written to file 'Case5_I_cv_cf_v1_rw.1.post.cov'
+
+current parameter uncertainty summary: 
+
+                name          prior_mean         prior_stdev   prior_lower_bound   prior_upper_bound           post_mean          post_stdev    post_lower_bound    post_upper_bound
+               tcd_p            0.101023           0.0378838           0.0252559            0.176791            0.101023           0.0378835           0.0252563             0.17679
+               tcd_m            0.984405            0.369152            0.246101             1.72271            0.984405            0.369151            0.246103             1.72271
+                af_m             1.49939            0.562271            0.374847             2.62393             1.49939            0.562267            0.374856             2.62392
+               auf_p            0.486935            0.182601            0.121734            0.852137            0.486935            0.182596            0.121744            0.852127
+               por_p            0.637395            0.239023            0.159349             1.11544            0.637395            0.238858            0.159679             1.11511
+              perm_m               1e-13            3.75e-14             2.5e-14            1.75e-13               1e-13         3.74998e-14         2.50004e-14            1.75e-13
+               den_p                 900               337.5                 225                1575                 900             337.499             225.003                1575
+               den_m                1900                 475                 950                2850                1900             474.998             950.004                2850
+           albedo_bg                0.55             0.20625              0.1375              0.9625                0.55            0.206215            0.137569            0.962431
+                e_bg                0.55             0.20625              0.1375              0.9625                0.55            0.206176            0.137647            0.962353
+               pen_w                0.01             0.00375              0.0025              0.0175                0.01          0.00374998          0.00250004              0.0175
+               pen_s                0.02              0.0075               0.005               0.035                0.02          0.00749997          0.00500006           0.0349999
+                z_bg                0.04               0.015                0.01                0.07                0.04           0.0149996           0.0100009           0.0699991
+the above parameter uncertainty summary was written to file 'Case5_I_cv_cf_v1_rw.0.par.usum.csv'
+
+  Summary of GLM lambda upgrade runs:
+    Lambda =     0.10; Type:       normal; length = 4.84e-02;  phi =  0.004297 (85.69% of starting phi)
+    Lambda =     0.10; Type:  scale(0.75); length = 3.63e-02;  phi =  0.004474 (89.22% of starting phi)
+    Lambda =     1.00; Type:       normal; length = 8.11e-03;  phi =  0.004883 (97.37% of starting phi)
+    Lambda =     1.00; Type:  scale(0.75); length = 6.09e-03;  phi =  0.004922 (98.15% of starting phi)
+    Lambda =    10.00; Type:       normal; length = 9.08e-04;  phi =  0.005004 (99.79% of starting phi)
+    Lambda =    10.00; Type:  scale(0.75); length = 6.81e-04;  phi =  0.005014 (99.98% of starting phi)
+    Lambda =   100.00; Type:       normal; length = 9.20e-05;  phi =  0.005022 (100.15% of starting phi)
+    Lambda =   100.00; Type:  scale(0.75); length = 6.90e-05;  phi =  0.005025 (100.20% of starting phi)
+    Lambda =  1000.00; Type:       normal; length = 9.22e-06;  phi =  0.005026 (100.23% of starting phi)
+    Lambda =  1000.00; Type:  scale(0.75); length = 6.91e-06;  phi =  0.005024 (100.19% of starting phi)
+
+    Parameters frozen during best upgrade:
+      AF_P frozen at 1.50511
+      ALPHA_M frozen at 0.00182491
+      ALPHA_P frozen at 0.01
+      AUF_M frozen at 0.698884
+      N_M frozen at 2.05
+      N_P frozen at 2.05
+      PERM_P frozen at 5.34662e-11
+      POR_M frozen at 0.481031
+      TCS_M frozen at 0.952105
+      TCS_P frozen at 0.439577
+      WR_M frozen at 0.159488
+      WR_P frozen at 0.224324
+      Z_S frozen at 0.005
+
+  Model calls in iteration 1: 30
+  Total model calls at end of iteration 1: 30
+
+
+  Final phi for this iteration                     Total : 0.00429707
+
+
+  Contribution to phi from observation group         "temp" : 0.00233826
+  Contribution to phi from observation group         "mois" : 0.00195881
+    Iteration 1 Parameter Upgrades (Control File Parameters) 
+      Parameter     Current       Previous       Factor       Relative
+        Name         Value         Value         Change        Change
+      ----------  ------------  ------------  ------------  ------------
+         alpha_p          0.01          0.01             1             0
+         alpha_m    0.00182491    0.00182491             1   2.38554e-06
+             n_p          2.05          2.05             1             0
+             n_m          2.05          2.05             1             0
+            wr_p      0.224324      0.224324             1   6.39521e-07
+            wr_m      0.159488      0.159488             1   4.06363e-07
+           tcs_p      0.439577      0.439577             1  -8.90925e-07
+           tcs_m      0.952105      0.952105             1    6.7251e-08
+           tcd_p      0.103416      0.101023       1.02368    -0.0236834
+           tcd_m      0.984313      0.984405       1.00009   9.39687e-05
+            af_p       1.50511       1.50511             1   2.75753e-06
+            af_m       1.49939       1.49939             1  -3.08507e-07
+           auf_p      0.482185      0.486935       1.00985      0.009756
+           auf_m      0.698884      0.698884             1   4.09796e-08
+           por_p      0.596381      0.637395       1.06877     0.0643468
+           por_m      0.481031      0.481031             1  -4.87931e-07
+          perm_p   5.34662e-11   5.34662e-11             1   3.97859e-07
+          perm_m   1.02125e-13         1e-13       1.02125    -0.0212471
+           den_p           900           900             1             0
+           den_m          1900          1900             1             0
+       albedo_bg      0.556831          0.55       1.01242    -0.0124205
+            e_bg      0.562798          0.55       1.02327    -0.0232683
+           pen_w        0.0025          0.01             4          0.75
+           pen_s     0.0215958          0.02       1.07979    -0.0797919
+            z_bg     0.0591072          0.04       1.47768     -0.477681
+             z_s         0.005         0.005             1             0
+       Maximum changes in "Control File" parameters:
+         Maximum relative change = 0.75   [pen_w]
+         Maximum factor change = 4   [pen_w]
+
+    Iteration 1 Parameter Upgrades (Transformed Numeric Parameters) 
+      Parameter     Current       Previous       Factor       Relative
+        Name         Value         Value         Change        Change
+      ----------  ------------  ------------  ------------  ------------
+            af_m       1.49939       1.49939             1  -3.08507e-07
+            af_p       1.50511       1.50511             1   2.75753e-06
+       albedo_bg      0.556831          0.55       1.01242    -0.0124205
+         alpha_m    0.00182491    0.00182491             1   2.38554e-06
+         alpha_p          0.01          0.01             1             0
+           auf_m      0.698884      0.698884             1   4.09796e-08
+           auf_p      0.482185      0.486935       1.00985      0.009756
+           den_m          1900          1900             1             0
+           den_p           900           900             1             0
+            e_bg      0.562798          0.55       1.02327    -0.0232683
+             n_m          2.05          2.05             1             0
+             n_p          2.05          2.05             1             0
+           pen_s     0.0215958          0.02       1.07979    -0.0797919
+           pen_w        0.0025          0.01             4          0.75
+          perm_m   1.02125e-13         1e-13       1.02125    -0.0212471
+          perm_p   5.34662e-11   5.34662e-11             1   3.97859e-07
+           por_m      0.481031      0.481031             1  -4.87931e-07
+           por_p      0.596381      0.637395       1.06877     0.0643468
+           tcd_m      0.984313      0.984405       1.00009   9.39687e-05
+           tcd_p      0.103416      0.101023       1.02368    -0.0236834
+           tcs_m      0.952105      0.952105             1    6.7251e-08
+           tcs_p      0.439577      0.439577             1  -8.90925e-07
+            wr_m      0.159488      0.159488             1   4.06363e-07
+            wr_p      0.224324      0.224324             1   6.39521e-07
+            z_bg     0.0591072          0.04       1.47768     -0.477681
+             z_s         0.005         0.005             1             0
+       Maximum changes in "Transformed Numeric" parameters:
+         Maximum relative change = 0.75   [pen_w]
+         Maximum factor change = 4   [pen_w]
+
+
+OPTIMISATION ITERATION NUMBER: 2
+
+  Iteration type: base parameter solution
+  SVD Package: RedSVD
+  Model calls so far : 30
 

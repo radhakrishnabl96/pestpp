@@ -5,10 +5,8 @@
       <xi:include href="ats_vis_surface_data.h5.21.xmf" xpointer="xpointer(//Xdmf/Domain/Grid)"/>
       <xi:include href="ats_vis_surface_data.h5.31.xmf" xpointer="xpointer(//Xdmf/Domain/Grid)"/>
       <xi:include href="ats_vis_surface_data.h5.41.xmf" xpointer="xpointer(//Xdmf/Domain/Grid)"/>
-      <xi:include href="ats_vis_surface_data.h5.54.xmf" xpointer="xpointer(//Xdmf/Domain/Grid)"/>
-      <xi:include href="ats_vis_surface_data.h5.64.xmf" xpointer="xpointer(//Xdmf/Domain/Grid)"/>
-      <xi:include href="ats_vis_surface_data.h5.74.xmf" xpointer="xpointer(//Xdmf/Domain/Grid)"/>
-      <xi:include href="ats_vis_surface_data.h5.84.xmf" xpointer="xpointer(//Xdmf/Domain/Grid)"/>
+      <xi:include href="ats_vis_surface_data.h5.51.xmf" xpointer="xpointer(//Xdmf/Domain/Grid)"/>
+      <xi:include href="ats_vis_surface_data.h5.61.xmf" xpointer="xpointer(//Xdmf/Domain/Grid)"/>
     </Grid>
   </Domain>
 </Xdmf>
