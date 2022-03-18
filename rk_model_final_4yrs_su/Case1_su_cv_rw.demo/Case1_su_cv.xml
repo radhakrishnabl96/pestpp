@@ -269,17 +269,17 @@
           <ParameterList name="peat" type="ParameterList">
             <Parameter name="region" type="string" value="subsurface domain peat" />
             <Parameter name="WRM Type" type="string" value="van Genuchten" />
-            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="9.509184385985e-03" />
-            <Parameter name="van Genuchten n [-]" type="double" value="2.049983773902" />
-            <Parameter name="residual saturation [-]" type="double" value="0.2245894831001" />
+            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="2.500000000000e-03" />
+            <Parameter name="van Genuchten n [-]" type="double" value="2.049693613360" />
+            <Parameter name="residual saturation [-]" type="double" value="0.2280234451503" />
             <Parameter name="smoothing interval width [saturation]" type="double" value="0.1" />
           </ParameterList>
           <ParameterList name="mineral" type="ParameterList">
             <Parameter name="region" type="string" value="subsurface domain mineral" />
             <Parameter name="WRM Type" type="string" value="van Genuchten" />
-            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="1.793306960953e-03" />
-            <Parameter name="van Genuchten n [-]" type="double" value="2.050000051686" />
-            <Parameter name="residual saturation [-]" type="double" value="0.1596035726120" />
+            <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="1.813533483731e-03" />
+            <Parameter name="van Genuchten n [-]" type="double" value="2.050026429543" />
+            <Parameter name="residual saturation [-]" type="double" value="0.1617816024565" />
             <Parameter name="smoothing interval width [saturation]" type="double" value="0.1" />
           </ParameterList>
           <ParameterList name="bedrock" type="ParameterList">
@@ -364,18 +364,18 @@
           <ParameterList name="peat" type="ParameterList">
             <Parameter name="region" type="string" value="subsurface domain peat" />
             <Parameter name="thermal conductivity type" type="string" value="three-phase wet/dry" />
-            <Parameter name="thermal conductivity, saturated (unfrozen) [W m^-1 K^-1]" type="double" value="0.43969721636307" />
-            <Parameter name="thermal conductivity, dry [W m^-1 K^-1]" type="double" value="0.10114278966983" />
-            <Parameter name="unsaturated alpha frozen [-]" type="double" value="1.5051128707205" />
-            <Parameter name="unsaturated alpha unfrozen [-]" type="double" value="0.48688321602841" />
+            <Parameter name="thermal conductivity, saturated (unfrozen) [W m^-1 K^-1]" type="double" value="0.44233665998186" />
+            <Parameter name="thermal conductivity, dry [W m^-1 K^-1]" type="double" value="0.10369965152389" />
+            <Parameter name="unsaturated alpha frozen [-]" type="double" value="1.5050701193311" />
+            <Parameter name="unsaturated alpha unfrozen [-]" type="double" value="0.48573699639116" />
           </ParameterList>
           <ParameterList name="mineral" type="ParameterList">
             <Parameter name="region" type="string" value="subsurface domain mineral" />
             <Parameter name="thermal conductivity type" type="string" value="three-phase wet/dry" />
-            <Parameter name="thermal conductivity, saturated (unfrozen) [W m^-1 K^-1]" type="double" value="0.95208967462243" />
-            <Parameter name="thermal conductivity, dry [W m^-1 K^-1]" type="double" value="0.98439905045168" />
-            <Parameter name="unsaturated alpha frozen [-]" type="double" value="1.4993900493783" />
-            <Parameter name="unsaturated alpha unfrozen [-]" type="double" value="0.69888402863781" />
+            <Parameter name="thermal conductivity, saturated (unfrozen) [W m^-1 K^-1]" type="double" value="0.95179276596611" />
+            <Parameter name="thermal conductivity, dry [W m^-1 K^-1]" type="double" value="0.98423927071188" />
+            <Parameter name="unsaturated alpha frozen [-]" type="double" value="1.4994068708823" />
+            <Parameter name="unsaturated alpha unfrozen [-]" type="double" value="0.69888402844610" />
           </ParameterList>
           <ParameterList name="bedrock" type="ParameterList">
             <Parameter name="region" type="string" value="subsurface domain bedrock" />
@@ -527,7 +527,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="0.63747741397672" />
+                <Parameter name="value" type="double" value="0.63840773749824" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -536,7 +536,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="0.48105775172492" />
+                <Parameter name="value" type="double" value="0.48163834735695" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -581,7 +581,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="1.33665553180e-11" />
+                <Parameter name="value" type="double" value="1.33665581106e-11" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -590,7 +590,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="1.34323019591e-13" />
+                <Parameter name="value" type="double" value="1.18798756523e-13" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
