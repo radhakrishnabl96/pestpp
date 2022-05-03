@@ -16,8 +16,8 @@ os.system(f"rm -rf {file_name}_obs_data.dat")
 
 
 # Running ats command
-os.system(f"singularity exec /bigwork/nhgjrabl/Singularity/ats_pest_final_2.sif ats --xml_file={file_name}.xml")
-#os.system(f"ats --xml_file={file_name}.xml")
+#os.system(f"singularity exec /bigwork/nhgjrabl/Singularity/ats_pest_final_2.sif ats --xml_file={file_name}.xml")
+os.system(f"ats --xml_file={file_name}.xml")
 
 # Generating a suitable observation file with no hash!
 remove_hashs = ['#']
